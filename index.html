@@ -7,6 +7,8 @@
     <link rel="stylesheet" type="text/css" href="assets/css/reset.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
     <link rel="stylesheet" href="assets/css/style.css">
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.22.2/moment.min.js"></script>
     <title>Train Time</title>
 </head>
 <body>
@@ -15,29 +17,27 @@
             <div class="container">
                   <h1 class="display-4">Anytime is Train Time</h1>
                   <p class="lead">Choo Choo. Chee Chee.</p>
+                  <p class="lead" id="current-time">Current Time: </p>
             </div>
         </div>
 
         <div class="row mt-5">
             <div class="col-sm-12">
                 <h2>Current Train Schedule</h2>
-                <table class= "table mt-3">
+                <table class="table mt-3" id="train-schedule">
                     <thead>
                         <tr>
                             <th scope="col">Train Name</th>
                             <th scope="col">Destination</th>
                             <th scope="col">Frequency (Min)</th>
+                            <th scope="col">First Time</th>
                             <th scope="col">Next Arrival</th>
                             <th scope="col">Minutes Away</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr scope="row">
-                            <td>PHI</td>
-                            <td>Philadelphia</td>
-                            <td>25</td>
-                            <td>5:35 PM</td>
-                            <td>10</td>
+       
                         </tr>
                     </tbody>
                 </table>
@@ -47,30 +47,34 @@
         <div class="row mt-5">
             <div class="col-sm-12">
                 <h2>Add Train</h2>
+
                 <div class= "mt-3" "form-group">
                     <label for="name-input">Train Name</label>
-                    <input type="text" class="form-control" id="usr">
+                    <input type="text" class="form-control" id="train-name">
                 </div>
                 <div class= "mt-3""destination-input">
                     <label for="role-input">Destination</label>
-                    <input type="text" class="form-control" id="usr">
+                    <input type="text" class="form-control" id="train-destination">
                 </div>
                 <div class= "mt-3" "trainTime-input">
                     <label for="start-input">First Train Time (HH:mm - military time)</label>
-                    <input type="text" class="form-control" id="usr">
+                    <input type="text" class="form-control" id="train-first-time">
                 </div>
                 <div class= "mt-3" "frequency-input">
                     <label for="monthly-input">Frequency (min)</label>
-                    <input type="text" class="form-control" id="usr">
+                    <input type="text" class="form-control" id="train-frequency">
                 </div>
             
                 <div class="mt-3">
-                    <a class="btn btn-primary" id="click-button" href="#" role="button">Submit</a>
+                    <button class="btn btn-primary float-right" id="add-train">Submit</button>
                 </div>
+
             </div>
         </div>
     </div>
-    
+    <br>
+
+    <script src="https://www.gstatic.com/firebasejs/5.1.0/firebase.js"></script>
     <script src='https://code.jquery.com/jquery-2.2.0.min.js'></script>
     <script src="assets/javascript/schedule.js"></script>
 </body>
